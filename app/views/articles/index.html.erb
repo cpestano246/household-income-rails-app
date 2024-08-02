@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Data</title>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<table width="100%">
+  <thead>
+  <tr>
+    <th rowspan="4" style="background: darkviolet; color: white">Zip (ZCTA)</th>
+    <th rowspan="2" colspan="2" style="background: cornflowerblue">High Income Households ($200K+)</th>
+    <th colspan="8" class="center" style="background: yellowgreen">Median Household Income by Age of Householder</th>
+  </tr>
+  <tr>
+    <th colspan="2" style="background: indianred">Householder Under 25 Years</th>
+    <th colspan="2" style="background: lightyellow;">Householder 25 to 44 Years</th>
+    <th colspan="2" style="background: orange;">Householder 45 to 64 Years</th>
+    <th colspan="2" style="background: aquamarine">Householder 65+ Years</th>
+  </tr>
+  <tr>
+    <th style="background: lightblue">Estimate</th>
+    <th style="background: lightpink">Margin of Error</th>
+    <th style="background: lightseagreen">Estimate</th>
+    <th style="background: lightsalmon">Margin of Error</th>
+    <th style="background: lightskyblue">Estimate</th>
+    <th style="background: lightcoral">Margin of Error</th>
+    <th style="background: palevioletred">Estimate</th>
+    <th style="background: yellowgreen">Margin of Error</th>
+    <th style="background: skyblue">Estimate</th>
+    <th style="background: darkorange">Margin of Error</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @content&.each do |row| %>
+    <tr>
+      <% row.each do |value| %>
+        <td><%= value %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>
